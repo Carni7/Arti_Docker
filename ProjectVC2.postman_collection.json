@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "b4c79799-2c1d-4e9e-a2a5-04c294f663a6",
+		"name": "ProjectVC2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Siamese",
+			"item": [
+				{
+					"name": "trainSiamese",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Sandro Botticelli\",\r\n    \"num_epochs\": 5,\r\n    \"learning_rate\": 0.001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/trainSiamese",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"trainSiamese"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "testSiamese",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Sandro Botticelli\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/testSiamese",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"testSiamese"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inferImage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "artist_name",
+									"value": "Sandro Botticelli",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Oliver/Studium/Semester_17/Praktikum 2/project/forTestingAfterChanges.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "inferImage",
+							"host": [
+								"inferImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inferImageSiameseLostPaintings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Oliver/Studium/Semester_17/Praktikum 2/project/forTestingAfterChanges.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/inferImageSiameseLostPaintings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inferImageSiameseLostPaintings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "testEuclidean",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/testEuclidean",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"testEuclidean"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "createVectors",
+			"item": [
+				{
+					"name": "createVectorsForArtist Giovanni",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Giovanni Bellini\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Sandro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Sandro Botticelli\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Salvador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Salvador Dali\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Leonardo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Leonardo Da Vinci\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Roy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Roy Lichtenstein\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Pablo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Pablo Picasso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Jackson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Jackson Pollock\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectorsForArtist Andy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_name\": \"Andy Warhol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/createVectorsForArtist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsForArtist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CNN",
+			"item": [
+				{
+					"name": "trainAndTestCNN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"momentum\": \"0.9\",\r\n    \"num_epochs\": 20,\r\n    \"learning_rate\": 0.001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/trainAndTestCNN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"trainAndTestCNN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inferImageCNN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Oliver/Studium/Semester_17/Praktikum 2/project/testImagesSiamese/forTestingAfterChanges_crossed.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/inferImageCNN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"inferImageCNN"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lost Paintings",
+			"item": [
+				{
+					"name": "testSiamese Lost Paintings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/testSiameseLostPaintings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"testSiameseLostPaintings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVectors Lost Paintings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/createVectorsLostPaintings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"createVectorsLostPaintings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trainSiamese Lost Paintings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"num_epochs\": 1,\r\n    \"learning_rate\": 0.001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/trainSiameseLostPaintings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"trainSiameseLostPaintings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
