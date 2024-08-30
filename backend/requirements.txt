@@ -1,0 +1,19 @@
+# Flask for the web framework
+Flask==3.0.3
+Flask-Cors==4.0.1
+
+# PyTorch and torchvision for deep learning
+torch==2.1.0
+torchvision==0.16.0
+
+# Pillow for image processing
+Pillow==10.0.1
+
+# PyMongo for MongoDB interaction
+pymongo==4.6.2
+
+# Matplotlib for plotting
+matplotlib==3.7.2
+
+# Numpy for numerical computations
+numpy==1.26.0

@@ -1,0 +1,13 @@
+<div class="image-upload-card">
+    <input type="file" accept="image/*" (change)="onFileSelected($event)" hidden #fileInput>
+    <div class="upload-area" (click)="fileInput.click()">
+      <mat-icon>cloud_upload</mat-icon>
+      <p>Click to upload an image</p>
+      <button mat-raised-button color="primary">Upload Image</button>
+    </div>
+    <div *ngIf="selectedFile" class="preview-area">
+      <h2 *ngIf="selectedFile">Uploaded Painting</h2>
+      <img [src]="imagePreview" alt="Image Preview">
+    </div>
+</div>
+  

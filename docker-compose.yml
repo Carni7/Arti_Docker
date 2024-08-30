@@ -1,0 +1,38 @@
+services:
+  angular-frontend:
+    build:
+      context: ./arti-app
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+    depends_on:
+      - flask-backend
+
+  flask-backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - backend
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.4
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d/
+    networks:
+      - backend
+
+volumes:
+  mongo_data:
+
+networks:
+  frontend:
+  backend:

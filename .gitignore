@@ -1,0 +1,15 @@
+/backend/models/
+/backend/test_data/
+/backend/train_data/
+/backend/artist_test_images/
+/backend/artist_training_data/
+/backend/artist_training_data_not_used/
+/backend/__pycache__/
+/wikiart/
+/backend/lost_paintings/
+/backend/testImagesCNN/
+backend/lost_paintings_training/
+backend/testLostPaintings/
+backend/testImagesCNN/
+backend/testImagesSiamese/
+backend/Info_Testimages/

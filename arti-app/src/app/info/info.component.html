@@ -1,0 +1,36 @@
+<app-image-upload></app-image-upload>
+
+<div class="container" *ngIf="paintingName">
+  <h2 class="infoHeading">Most similar Painting: <b>{{paintingName}}</b> by <b>{{artistName}}</b></h2>
+  <div class="image-container">
+    <img [src]="'data:image/jpeg;base64,' + closestImageData" alt="{{paintingName}}" class="image" *ngIf="paintingName">
+    <div class="info">
+      <h3 *ngIf="paintingName">Similarity: {{similarity}} <br>Average distance to all paintings by the artist: {{averageDistance}}</h3>
+    </div>
+  </div>
+</div>
+
+<h2 *ngIf="paintingName" class="infoHeading">Some paintings by {{artistName}}</h2>
+<div *ngIf="paintingName" class="grid-container" [ngStyle]="{'grid-template-columns': 'repeat(' + cols + ', 1fr)'}">
+  <div class="grid-item" *ngFor="let image of artistImages">
+    <img [src]="'data:image/jpeg;base64,' + image.base64data" alt="{{image.paintingName}}">
+    <div class="info">
+      <h3>{{image.paintingName}}</h3>
+    </div>
+  </div>
+</div>
+
+<h2 *ngIf="paintingName && closeImages.length > 0" class="infoHeading">
+  Some paintings by {{artistName}} within Euclidean Distance of {{closenessThreshold}}
+</h2>
+<h2 *ngIf="paintingName && closeImages.length === 0" class="infoHeading">
+  No paintings by {{artistName}} found within Euclidean Distance of {{closenessThreshold}}
+</h2>
+<div *ngIf="paintingName" class="grid-container" [ngStyle]="{'grid-template-columns': 'repeat(' + cols + ', 1fr)'}">
+  <div class="grid-item" *ngFor="let image of closeImages">
+    <img [src]="'data:image/jpeg;base64,' + image.base64data" alt="{{image.paintingName}}">
+    <div class="info">
+      <h3>{{image.paintingName}}</h3>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+.separator {
+  display: inline-block;
+  width: 2px;
+  height: 24px; /* Adjust height as needed */
+  background-color: white; /* Adjust color as needed */
+  vertical-align: middle;
+}

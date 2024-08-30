@@ -1,0 +1,23 @@
+<app-image-upload></app-image-upload>
+
+
+<div class="container" *ngIf="paintingName">
+    <h2 class="infoHeading">Closest image with similarity: {{similarity}}</h2>
+  
+    <div class="image-container">
+      <img [src]="'data:image/jpeg;base64,' + closestImageData" alt="{{paintingName}}" class="image" *ngIf="artistName">
+      <div class="info">
+        <h3>{{paintingName}} by {{artistName}}</h3>
+      </div>
+    </div>
+  </div>
+
+<h2 *ngIf="artistName" class="infoHeading">Closest Paintings sorted within Euclidean Distance: {{closenessThreshold}}</h2>
+<div class="grid-container" [ngStyle]="{'grid-template-columns': 'repeat(' + cols + ', 1fr)'}">
+  <div class="grid-item" *ngFor="let image of closeImages">
+    <img [src]="'data:image/jpeg;base64,' + image.base64data" alt="{{image.paintingName}}">
+    <div class="info">
+      <h3>{{image.paintingName}} by {{image.artistName}}</h3>
+    </div>
+  </div>
+</div>
