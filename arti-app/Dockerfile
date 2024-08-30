@@ -25,9 +25,6 @@ FROM nginx:alpine
 # Copy the custom nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy the /app directory from the build stage to the final image
-COPY --from=build /usr/src/app /usr/share/nginx/app
-
 # Copy the build output from the previous step to Nginx's default public directory
 COPY --from=build /usr/src/app/dist/arti-app /usr/share/nginx/html
 
